@@ -140,11 +140,15 @@ app.post("/delete",function(req,res){
 //     res.render("about"); 
 // })
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
+// let port = process.env.PORT;
+// if (port == null || port == "") {
+//   port = 3000;
+// }
 
-app.listen(port,function(){
-    console.log("server started successfully");
-});
+// app.listen(port,function(){
+//     console.log("server started successfully");
+// });
+const server = app.listen(process.env.PORT || 5000, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+  });
